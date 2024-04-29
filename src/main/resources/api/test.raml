@@ -1,0 +1,72 @@
+#%RAML 1.0
+title: test
+
+/getAccountSummary:
+  description: "to get details of accounts of a customer"
+  /{accountID}:
+    uriParameters:
+      accountID: number
+           
+
+    get:    
+      queryParameters:
+        accountNumber:
+          type: number 
+          default: 100
+          
+          
+        
+        
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                {
+                  "bankAccountNumber": 1234,
+                  "bankName" : "SBI",
+                  "IFSCCode" : "UTI1234",
+                  "customerName" : "Mownika"
+                }
+
+/createBankAccount:
+  description: "to create a new bank account"
+  post:
+    body:
+      application/json:
+        example:
+          {
+                "bankAccountNumber": 3456,
+                "bankName" : "SBI",
+                "IFSCCode" : "UTI1234",
+                "customerName" : "Adari"
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {
+                message : "account created"
+              }
+
+
+    
+  
+    
+   
+    
+      
+
+      
+   
+
+
+
+
+        
+
+
+
+
+
